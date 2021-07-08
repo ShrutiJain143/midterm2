@@ -33,7 +33,7 @@ X = sc.fit_transform(X)
 
 def predict_note_authentication(Gender,Glucose,BP,SkinThickness,Insulin, BMI, PedigreeFunction, Age):
   output= model.predict(sc.transform([[Gender,Glucose,BP,SkinThickness,Insulin, BMI, PedigreeFunction, Age]]))
-  print("Model has predicted ",output)
+  print("Hierarchical clustering Model has predicted ",output)
   if output==[0]:
     prediction="Patient has Disease...!"
    
@@ -52,13 +52,13 @@ def main():
    <div class="col-md-12">
    <center><p style="font-size:40px;color:white;margin-top:10px;">Poornima Institute of Engineering & Technology</p></center> 
    <center><p style="font-size:30px;color:white;margin-top:10px;">Department of Computer Engineering</p></center> 
-   <center><p style="font-size:25px;color:white;margin-top:10px;">Experiment Deployment By Sudhanshu Vijay</p></center> 
+   <center><p style="font-size:25px;color:white;margin-top:10px;">Experiment Deployment By Shruti Jain</p></center> 
    </div>
    </div>
    </div>
    """
     st.markdown(html_temp,unsafe_allow_html=True)
-    st.header("Prediction for sickness")
+    st.header("Prediction for sickness by Hierarchical clustering model")
     Gender = st.number_input('Insert 0 for Male 1 for Female ',0,1)
     Glucose = st.number_input('Insert Glucose',0,200)
     BP = st.number_input('Insert Bp',0,100)
@@ -71,9 +71,9 @@ def main():
     result=""
     if st.button("Predict"):
       result=predict_note_authentication(Gender,Glucose,BP,SkinThickness,Insulin, BMI, PedigreeFunction, Age)
-      st.success('Model has predicted {}'.format(result))
+      st.success('Hierarchical clustering Model has predicted {}'.format(result))
     if st.button("About"):
-      st.subheader("Developed by Sudhanshu Vijay")
+      st.subheader("Developed by Shruti Jain")
       st.subheader("C-Section,PIET")
 
 if __name__=='__main__':
